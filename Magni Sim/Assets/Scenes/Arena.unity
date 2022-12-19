@@ -674,6 +674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: magni3
       objectReference: {fileID: 0}
+    - target: {fileID: 492462516532102219, guid: ad46c8c3f999f574192d1d2202624bd3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 492462516532102221, guid: ad46c8c3f999f574192d1d2202624bd3, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -942,11 +946,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 492462516532102258, guid: ad46c8c3f999f574192d1d2202624bd3, type: 3}
       propertyPath: overrideTopicName
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492462516532102258, guid: ad46c8c3f999f574192d1d2202624bd3, type: 3}
       propertyPath: <TopicName>k__BackingField
-      value: turtle1/cmd_vel
+      value: cmd_vel
       objectReference: {fileID: 0}
     - target: {fileID: 492462516532102258, guid: ad46c8c3f999f574192d1d2202624bd3, type: 3}
       propertyPath: <TopicSubsciption>k__BackingField
