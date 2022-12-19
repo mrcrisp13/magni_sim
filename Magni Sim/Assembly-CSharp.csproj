@@ -36,20 +36,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\RosMessages\UnityRoboticsDemo\msg\UnityColorMsg.cs" />
-     <Compile Include="Assets\RosMessages\UnityRoboticsDemo\srv\ObjectPoseServiceRequest.cs" />
      <Compile Include="Assets\Scripts\Controller\simulatedTeleopController.cs" />
      <Compile Include="Assets\Scripts\IO\sensorIR.cs" />
-     <Compile Include="Assets\RosMessages\UnityRoboticsDemo\srv\PositionServiceResponse.cs" />
      <Compile Include="Assets\Scripts\Controller\manualController_v2.cs" />
      <Compile Include="Assets\Scripts\Controller\manualController.cs" />
      <Compile Include="Assets\Scripts\IO\twoSensors.cs" />
      <Compile Include="Assets\Scripts\IO\GPIO.cs" />
-     <Compile Include="Assets\Scripts\RosPublisherExample.cs" />
      <Compile Include="Assets\Scripts\Controller\teleopController.cs" />
-     <Compile Include="Assets\RosMessages\UnityRoboticsDemo\srv\PositionServiceRequest.cs" />
-     <Compile Include="Assets\RosMessages\UnityRoboticsDemo\srv\ObjectPoseServiceResponse.cs" />
-     <Compile Include="Assets\RosMessages\UnityRoboticsDemo\msg\PosRotMsg.cs" />
      <None Include="Assets\magni_robot\magni_desktop\CMakeLists.txt" />
      <None Include="Assets\magni_robot\magni_demos\CMakeLists.txt" />
      <None Include="Assets\magni_robot\magni_viz\CMakeLists.txt" />

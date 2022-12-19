@@ -27,7 +27,6 @@ public class twoSensors : MonoBehaviour
     if(timeElapsed >= (1f/frequency))
     {
       lastTime = Time.time;
-      // int[] messageArray = new int[sensors.Count];
       sbyte output = 0;
 
       if(leftSensor.feedback)

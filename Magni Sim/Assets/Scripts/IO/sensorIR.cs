@@ -19,7 +19,6 @@ public class sensorIR : MonoBehaviour
 
     void FixedUpdate()
     {
-      // sensorRay = new Ray(transform.position, transform.forward);
       if(Physics.Raycast(transform.position, -transform.up, out sensorHit, range))
       {
         sensedColor = sensorHit.transform.GetComponent<MeshRenderer>().material.color;

@@ -61,20 +61,20 @@ public class teleopController : MonoBehaviour
       angularSpeed = 0f;
     }
 
-    float leftWheel_targetVelocity = Mathf.Clamp(linearSpeed, -maxSpeed, maxSpeed) / wheelRadius;
-    float rightWheel_targetVelocity = leftWheel_targetVelocity;
-    float wheelDifferential = (Mathf.Clamp(angularSpeed, -maxAngle, maxAngle) * differential) / wheelRadius;
+    float leftWheel_torque = Mathf.Clamp(linearSpeed, -maxSpeed, maxSpeed) / wheelRadius;
+    float rightWheel_torque = leftWheel_torque;
+    float differentialModifier = (Mathf.Clamp(angularSpeed, -maxAngle, maxAngle) * differential) / wheelRadius;
 
-    leftWheel_targetVelocity = (angularSpeed != 0) ? (leftWheel_targetVelocity + wheelDifferential) : leftWheel_targetVelocity;
-    rightWheel_targetVelocity = (angularSpeed != 0) ? (rightWheel_targetVelocity - wheelDifferential) : rightWheel_targetVelocity;
+    leftWheel_torque = (angularSpeed != 0) ? (leftWheel_torque + differentialModifier) : leftWheel_torque;
+    rightWheel_torque = (angularSpeed != 0) ? (rightWheel_torque - differentialModifier) : rightWheel_torque;
 
     AnimateWheel(leftWheel);
     AnimateWheel(rightWheel);
     GetParameters();
-    SetDriveSpeed(leftWheel,leftWheel_targetVelocity);
-    SetDriveSpeed(rightWheel,rightWheel_targetVelocity);
-    SetDriveSpeed(leftCaster,leftWheel_targetVelocity);
-    SetDriveSpeed(rightCaster,rightWheel_targetVelocity);
+    SetDriveSpeed(leftWheel,leftWheel_torque);
+    SetDriveSpeed(rightWheel,rightWheel_torque);
+    SetDriveSpeed(leftCaster,leftWheel_torque);
+    SetDriveSpeed(rightCaster,rightWheel_torque);
   }
 
   private void AnimateWheel(WheelCollider wheelCollider)
@@ -137,8 +137,8 @@ public class teleopController : MonoBehaviour
     cmdTime = Time.time;
   }
 
-  private void SetDriveSpeed(WheelCollider wheel, float targetVelocity = float.NaN)
+  private void SetDriveSpeed(WheelCollider wheel, float torque = float.NaN)
   {
-    wheel.motorTorque = float.IsNaN(targetVelocity) ? ((2 * maxSpeed) / wheelRadius) * motorPower : targetVelocity * motorPower;
+    wheel.motorTorque = float.IsNaN(torque) ? ((2 * maxSpeed) / wheelRadius) * motorPower : torque * motorPower;
   }
 }
